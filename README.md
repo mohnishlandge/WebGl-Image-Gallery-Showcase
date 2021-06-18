@@ -2,7 +2,7 @@
 
 *Get started with pixi.js to render 3d Web Experience*
 
-![Image Title](https://github.com/mohnishlandge/webgl-assets/blob/main/Screenshot%20(177).png)
+![Image Title](https://github.com/mohnishlandge/WebGl-Image-Gallery-Showcase/blob/main/webglgall.png)
 
 [Youtube Setup Video](https://youtu.be/MmjZG-UX30g)
 
