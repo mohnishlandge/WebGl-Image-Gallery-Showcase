@@ -1,1 +1,0 @@
-# WebGl-Image-Gallery-Showcase

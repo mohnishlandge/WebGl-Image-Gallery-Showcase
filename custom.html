@@ -25,14 +25,12 @@
 
       .view {
         position: absolute;
-        filter: grayscale(1) brightness(2);
-        opacity: 50%;
+        filter: grayscale(1);
         transition: 1s ease-in-out;
       }
 
       .view:active {
-        filter: grayscale(0) brightness(1);
-        opacity: 100%;
+        filter: grayscale(0);
       }
 
       .input {
@@ -178,15 +176,15 @@
       .refresh {
         position: absolute;
         margin: 0%;
-        left: 2.5em;
+        left: 22em;
         bottom: 5em;
       }
 
       .share {
         position: absolute;
         margin: 0%;
-        left: 2.5em;
-        bottom: 9em;
+        left: 25em;
+        bottom: 5em;
       }
 
       button {
@@ -251,16 +249,16 @@
 
         .share {
           left: 18em;
-          bottom: 4em;
+          bottom: 9em;
         }
 
         .refresh {
           left: 3em;
-          bottom: 4em;
+          bottom: 9em;
         }
         h3 {
           font-size: 0.7em;
-          bottom: 0.5em;
+          bottom: 1em;
         }
       }
     </style>
@@ -341,6 +339,13 @@
         />
       </svg>
     </div>
+    <input
+      type="text"
+      class="input"
+      placeholder="Enter Unsplash Username"
+      id="myInput"
+    />
+
     <button
       type="button"
       class="button button--surtur"
@@ -388,9 +393,7 @@
         <circle class="eye__inner" cx="35" cy="35.31" r="10.041" />
       </svg>
     </button>
-    <h3>
-      Try <b>Custom Mode</b> go through any <b>Unsplash Contributers </b>photos
-    </h3>
+    <h3>Try <b>"eliapelle"</b> or <b>"mohnishlandge"</b> then press Enter</h3>
     <!-- Main -->
     <canvas class="view" ontouchstart=""></canvas>
     <a href="https://unsplash.com/mohnishlandge" target="_blank"
@@ -404,9 +407,8 @@
         </svg>
       </div>
     </a>
-
     <div class="refresh">
-      <button type="button" onClick="location.href='custom.html';">
+      <button type="button" onClick="window.location.reload();">
         <svg
           width="24"
           height="24"
@@ -414,12 +416,12 @@
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g id="24 / basic / options">
+          <g id="24 / arrows / refresh-ccw">
             <path
               id="icon"
               fill-rule="evenodd"
               clip-rule="evenodd"
-              d="M13 11C11.1362 11 9.57006 9.72523 9.12602 8H2V6H9.12602C9.57006 4.27477 11.1362 3 13 3C15.2091 3 17 4.79086 17 7C17 9.20914 15.2091 11 13 11ZM19 6H22V8H19V6ZM8 21C6.13616 21 4.57006 19.7252 4.12602 18H2V16H4.12602C4.57006 14.2748 6.13616 13 8 13C10.2091 13 12 14.7909 12 17C12 19.2091 10.2091 21 8 21ZM14 18H22V16H14V18ZM10 17C10 18.1046 9.10457 19 8 19C6.89543 19 6 18.1046 6 17C6 15.8954 6.89543 15 8 15C9.10457 15 10 15.8954 10 17ZM15 7C15 8.10457 14.1046 9 13 9C11.8954 9 11 8.10457 11 7C11 5.89543 11.8954 5 13 5C14.1046 5 15 5.89543 15 7Z"
+              d="M10 7H6.19306C7.55354 5.0787 9.60638 4 12 4C16.4183 4 20 7.58172 20 12H22C22 6.47715 17.5228 2 12 2C9.19577 2 6.72511 3.18251 5 5.27035V2H3V9H10V7ZM14 17H17.8069C16.4465 18.9213 14.3936 20 12 20C7.58172 20 4 16.4183 4 12H2C2 17.5228 6.47715 22 12 22C14.8042 22 17.2749 20.8175 19 18.7297V22H21V15H14V17Z"
               fill="white"
             />
           </g>
@@ -708,10 +710,11 @@
 
         // Load texture for an image, giving its index
         function loadTextureForImage(index) {
+          var inputName = document.getElementById('myInput').value
           // Get image Sprite
           const image = images[index]
           // Set the url to get a random image from Unsplash Source, given image dimensions
-          const url = `https://source.unsplash.com/user/eliapelle/${image.width}x${image.height}`
+          const url = `https://source.unsplash.com/user/${inputName}/${image.width}x${image.height}`
           // Get the corresponding rect, to store more data needed (it is a normal Object)
           const rect = rects[index]
           // Create a new AbortController, to abort fetch if needed
